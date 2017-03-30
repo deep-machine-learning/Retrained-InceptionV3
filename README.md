@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TensorFlow-Slim
 
 TF-Slim is a lightweight library for defining, training and evaluating models in
@@ -629,3 +630,7 @@ def vgg16_pascal(inputs):
 ## Authors
 
 Sergio Guadarrama and Nathan Silberman
+=======
+# Retrained-InceptionV3
+Retrained InceptionV3 image classification model
+>>>>>>> cd452bdbbdbf3ef8036795b327f0d74e5ae8c735
