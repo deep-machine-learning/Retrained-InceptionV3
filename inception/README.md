@@ -66,4 +66,41 @@ if __name__ == '__main__':
   tf.app.run()
   ```
   
+Add the following the BUILD file
+
+```
+py_library(
+    name = "DR_data",
+    srcs = [
+        "DR_data.py",
+    ],
+    deps = [
+        ":dataset",
+    ],
+)
+
+py_binary(
+    name = "DR_eval",
+    srcs = [
+        "DR_eval.py",
+    ],
+    deps = [
+        ":DR_data",
+        ":inception_eval",
+    ],
+)
+
+py_binary(
+    name = "DR_train",
+    srcs = [
+        "DR_train.py",
+    ],
+    deps = [
+        ":DR_data",
+        ":inception_train",
+    ],
+)
+```
+
+
   
