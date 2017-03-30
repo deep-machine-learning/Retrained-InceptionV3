@@ -1,0 +1,5 @@
+model_checkpoint_path: "model.h5-999"
+all_model_checkpoint_paths: "/media/analytics/data/DiabeticRetinopathy/\\DR_chpk/model.ckpt-0"
+all_model_checkpoint_paths: "model.h5-0"
+all_model_checkpoint_paths: "/media/analytics/data/DiabeticRetinopathy/\\DR_chpk/model.ckpt-999"
+all_model_checkpoint_paths: "model.h5-999"
