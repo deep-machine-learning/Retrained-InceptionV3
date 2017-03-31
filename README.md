@@ -74,6 +74,11 @@ bazel-bin/inception/DR_train \
  ```
  Fine tune the hyperparameters to your dataset and requirments. 
  
+ ## FAQ
+ 
+ 1. What version of Tensorflow does this work on?
+ 
+ v1.0.1
  
 
 
