@@ -76,9 +76,15 @@ bazel-bin/inception/DR_train \
  
  ## Freeze graph from checkpoint model
  
- The output of training will save the graph definition of the model in the .meta file and weights in the .data file saved in the DR_chpk directory. Unfortunately, these files cannot be directly used for prediction. We have to freeze the graph definition along with the weights in one .pb file. 
+ The output of training will save the meta graph of the model in the .meta file and weights in the checkpoint file saved in the DR_chpk directory. Unfortunately, these files cannot be directly used for prediction. We have to freeze the graph definition along with the weights in one .pb file. 
  
- This can be achieved by the **freeze_graph.py** file. 
+ This can be achieved by the **freeze_graph.py** file. The output of this file is frozen_model.pb which can be used for prediction. 
+ 
+ ## Prediction
+ 
+ To use your retrained image classification model to make prediction on an unknown image, use **predict.py**. Following is an example of how to do this. 
+ 
+ 
  
  ## FAQ
  
