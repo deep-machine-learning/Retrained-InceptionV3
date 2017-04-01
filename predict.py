@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
     # Create input queue
     img_q = Queue.Queue()
-    map(img_q.put, glob.glob('/serving/frames/*.jpg'))
+    map(img_q.put, glob.glob(image_dir+'/*.jpg'))
 
     # We use our "load_graph" function
     graph = load_graph(FLAGS.frozen_model_filename)
