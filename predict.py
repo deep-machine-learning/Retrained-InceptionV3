@@ -13,11 +13,9 @@ import glob
 import itertools
 import os.path
 import re
-import sys
 import tarfile
 import Queue
 import time
-import pandas as pd
 
 dir = os.path.dirname(os.path.realpath(__file__))
 FLAGS = tf.app.flags.FLAGS
@@ -107,8 +105,6 @@ def load_graph(frozen_graph_filename):
         )
     return graph
 
-#graph = load_graph('/serving/frozen_model.pb')
-
 def create_image_batch(folder):
 	image_list = glob.glob(folder)
 	img_np_list=[]
@@ -122,10 +118,10 @@ def create_image_batch(folder):
 if __name__ == '__main__':
     # Let's allow the user to pass the filename as an argument
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_dir",type=str,default='/serving/')
+    parser.add_argument("--model_dir",type=str,default='./')
     parser.add_argument("--num_top_predictions",type=int,default=1)
-    parser.add_argument("--frozen_model_filename", default="/serving/frozen_model.pb", type=str, help="Frozen model file to import")
-    parser.add_argument("--image_name",type=str,help="Image to test")
+    parser.add_argument("--frozen_model_filename", default="frozen_model.pb", type=str, help="Frozen model file to import")
+    parser.add_argument("--image_dir",type=str,help="directory of images to predict on")
     parser.add_argument("--layer",type=str,help="Output layer")
 
     FLAGS,unparsed = parser.parse_known_args()
@@ -164,16 +160,12 @@ if __name__ == '__main__':
 	predictions = np.squeeze(prediction)
 
     	# Creates node ID --> English string lookup.
-    	#node_lookup = NodeLookup()
-    	#top_k = predictions.argsort()[-FLAGS.num_top_predictions:][::-1]
-    	#for node_id in top_k:
-      	#	human_string = node_lookup.id_to_string(node_id)
-      	#	score = predictions[node_id]
+    	node_lookup = NodeLookup()
+    	top_k = predictions.argsort()[-FLAGS.num_top_predictions:][::-1]
+    	for node_id in top_k:
+      		human_string = node_lookup.id_to_string(node_id)
+      		score = predictions[node_id]
 
 	embedding_list.append(embedding)
-	df.DataFrame.from_items([('embedding',embedding_list)])
-	#prediction_list.append(human_string)
-       #df = pd.DataFrame.from_items([('filenames',glob.glob('/serving/frames/*.jpg')),('embedding',embedding_list),('prediction',prediction_list)])
-       #print (df)
+	prediction_list.append(human_string)
        print ('total time: %s seconds'%(time.time()-start))
-       df.to_csv('embedding_csv.csv', sep='\t')
