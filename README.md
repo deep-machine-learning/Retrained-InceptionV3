@@ -124,6 +124,14 @@ bazel-bin/inception/DR_train \
  
  Yes, this is tested on Nvidia TitanX
  
+ 4. What data has this been tested on?
+ 
+ On Retinal fundus image data from Kaggle for the Diabetic Retinopathy competition. 
+ Link: https://www.kaggle.com/c/diabetic-retinopathy-detection
+ 
+ 
+ 
+ 
  
  
 
