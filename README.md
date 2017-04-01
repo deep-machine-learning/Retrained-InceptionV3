@@ -80,6 +80,16 @@ bazel-bin/inception/DR_train \
  
  v1.0.1
  
+ 2. What version of Python does this work on?
+ 
+ v2.7
+ 
+ 3. Does the training have GPU support?
+ 
+ Yes, this is tested on Nvidia TitanX
+ 
+ 
+ 
 
 
 
