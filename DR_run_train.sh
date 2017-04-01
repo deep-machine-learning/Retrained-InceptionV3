@@ -1,4 +1,4 @@
-DIR="/media/analytics/data/DiabeticRetinopathy/"
+DIR=${HOME_DIR}
 
 # Build the model. Note that we need to make sure the TensorFlow is ready to
 # use before this as this command will not build TensorFlow.
