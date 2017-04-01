@@ -1,5 +1,24 @@
 # Retraining InceptionV3 Model using a new dataset (Transfer Learning)
 
+## Downloading imagenet trained InceptionV3 model
+
+```
+# location of where to place the Inception v3 model
+DATA_DIR=$HOME/inception-v3-model
+mkdir -p ${DATA_DIR}
+cd ${DATA_DIR}
+
+# download the Inception v3 model
+curl -O http://download.tensorflow.org/models/image/imagenet/inception-v3-2016-03-01.tar.gz
+tar xzf inception-v3-2016-03-01.tar.gz
+
+# this will create a directory called inception-v3 which contains the following files.
+> ls inception-v3
+README.txt
+checkpoint
+model.ckpt-157585
+```
+
 ## Data Processing
 
 It is important to pre-process your data in order to make the process of retraining inceptionV3 easier. Configure your data folder the following way:
