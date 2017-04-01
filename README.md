@@ -63,14 +63,14 @@ Follow the instructions given in the **README** file at *./Retrained-InceptionV3
 **DR_run_train.sh** file has the required instructions to run the training on your dataset once the above steps are finished. The script has the following:
 
 ```
-DIR="/media/analytics/data/DiabeticRetinopathy/"
+DIR=${HOME_DIR}
 
 # Build the model. Note that we need to make sure the TensorFlow is ready to
 # use before this as this command will not build TensorFlow.
 bazel build inception/DR_train
 
 # Path to the downloaded Inception-v3 model.
-MODEL_PATH="${DIR}/inception/inception-v3/model.ckpt-157585"
+MODEL_PATH="${DIR}/inception-v3/model.ckpt-157585"
 
 # Directory where the flowers data resides.
 DR_DATA_DIR="${DIR}/data/model-ready-data"
