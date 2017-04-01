@@ -82,8 +82,11 @@ bazel-bin/inception/DR_train \
  
  ## Prediction
  
- To use your retrained image classification model to make prediction on an unknown image, use **predict.py**. Following is an example of how to do this. 
+ To use your retrained image classification model to make prediction on unknown images, use **predict.py**. We can either output the human string output by the softmax layer or the pre-softmax pool layer giving us a 2048 signature of the image. By default the top-k predictions is set to 1. Example:
  
+ ```
+ python predict.py --image_dir=${DIR_OF_TEST_IMAGES} --layer='softmax'
+ ```
  
  
  ## FAQ
