@@ -82,12 +82,14 @@ bazel-bin/inception/DR_train \
  
  ## Prediction
  
- To use your retrained image classification model to make prediction on unknown images, use **predict.py**. We can either output the human string output by the softmax layer or the pre-softmax pool layer giving us a 2048 signature of the image. By default the top-k predictions is set to 1. Example:
+ To use your retrained image classification model to make prediction on unknown images, use **predict.py**. We can either output the human string output by the softmax layer or the pre-softmax pool layer giving us a 2048 signature of the image. By default the top-k predictions is set to 1. You can change this by setting the *num_top_predictions* system arg. Example:
  
  ```
- python predict.py --image_dir=${DIR_OF_TEST_IMAGES} --layer='softmax'
+ python predict.py --image_dir=${DIR_OF_TEST_IMAGES} --layer='softmax' # for softmax layer 
+ python predict.py --image_dir=${DIR_OF_TEST_IMAGES} --layer='pool' # for pool layer
  ```
  
+ The current inceptionV3 architecture takes batches of 64 images with size 299x299x3 as an input. If your test directory has fewer than 64 images (eg. 1), **predict.py** script will pad the remaining images with zeros. If your test directory has more than 64 images, **predict.py** script will batch the them into chunks of 64 images. 
  
  ## FAQ
  
