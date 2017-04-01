@@ -7,11 +7,11 @@ DIR=${HOME_DIR}
 # Path to the downloaded Inception-v3 model.
 MODEL_PATH="${DIR}/inception/inception-v3/model.ckpt-157585"
 
-# Directory where the flowers data resides.
+# Directory where the your TFrecords data resides.
 DR_DATA_DIR="${DIR}/data/model-ready-data"
 
 # Directory where to save the checkpoint and events files.
-TRAIN_DIR="${DIR}\DR_chpk"
+TRAIN_DIR="${DIR}/DR_chpk"
 
 # Run the fine-tuning on the flowers data set starting from the pre-trained
 # Imagenet-v3 model.
