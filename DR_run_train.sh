@@ -1,11 +1,11 @@
-DIR=${HOME_DIR}
+DIR='/media/analytics/data/Retrained-InceptionV3'
 
 # Build the model. Note that we need to make sure the TensorFlow is ready to
 # use before this as this command will not build TensorFlow.
 #bazel build inception/DR_train
 
 # Path to the downloaded Inception-v3 model.
-MODEL_PATH="${DIR}/inception/inception-v3/model.ckpt-157585"
+MODEL_PATH="${DIR}/inception-v3/model.ckpt-157585"
 
 # Directory where the your TFrecords data resides.
 DR_DATA_DIR="${DIR}/data/model-ready-data"
