@@ -91,7 +91,7 @@ bazel-bin/inception/DR_train \
   --batch_size=64
   
  ```
- Fine tune the hyperparameters to your dataset and requirments. 
+ Point the var DIR to your folder directory and fine tune the hyperparameters to your dataset and requirments. 
  
  ## Freeze graph from checkpoint model
  
